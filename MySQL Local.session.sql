@@ -1,0 +1,1 @@
+SELECT * FROM disease_db.disease_readmis;
