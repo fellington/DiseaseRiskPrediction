@@ -10,3 +10,5 @@ Steps:
 4) R to compare models
 5) Tableau to display
 6) Add SQL scripts, Jupyter notebooks, and dashboard screenshots
+
+Clinical variables capture patient demographics, prior healthcare utilization, laboratory testing, diagnoses, and medication changes. These represent proxies for disease severity, treatment intensity, and healthcare access
