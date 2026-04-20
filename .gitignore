@@ -9,7 +9,7 @@ __pycache__/
 .env
 
 # VS Code
-.vscode/
+.vscode/settings.json
 
 # Mac/Windows junk
 .DS_Store
