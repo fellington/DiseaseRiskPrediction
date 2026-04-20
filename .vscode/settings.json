@@ -13,7 +13,7 @@
             "name": "MySQL Local",
             "database": "disease_db",
             "username": "root",
-            "password": "S3cur3passw0rd!"
+            "password": ""
         }
     ]
 }
