@@ -112,6 +112,8 @@ In practice, threshold selection can be adjusted depending on whether the priori
 
 ## Project Structure
 
+```
+project/
 ├── data/
 │   └── diabetes_clean.csv
 ├── notebooks/
@@ -119,7 +121,11 @@ In practice, threshold selection can be adjusted depending on whether the priori
 │   └── 02_modeling.ipynb
 ├── sql/
 │   └── cohort_extraction.sql
+├── images/
+│   ├── roc_curve.png
+│   └── feature_importance.png
 ├── README.md
+```
 
 ## About Me
 
