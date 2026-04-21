@@ -40,7 +40,7 @@ In this project, I developed an end-to-end machine learning pipeline to predict 
 - Cleaned the raw dataset (i.e. handled hidden formatting issues like \r)
 - Created binary target:
   - 1 = readmitted within 30 days
-  - 0 = readmitted over 30 days or never readmitted
+  - 0 = readmitted after 30 days or never readmitted
 - Addressed missing values and encoded categorical variables
 
 ### 2. Modeling
