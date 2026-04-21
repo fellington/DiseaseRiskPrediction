@@ -13,7 +13,7 @@ In this project, I built an end-to-end machine learning pipeline to predict whet
 
 ## Dataset
 
-- Source: UCI Diabetes 130-US hospitals dataset (link: )
+- Source: [UCI Diabetes 130-US hospitals dataset](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
 - About 100,000 patient encounters included
 - Features include:
   - Demographics (e.g. age, gender, race)
@@ -45,17 +45,27 @@ In this project, I built an end-to-end machine learning pipeline to predict whet
 
 ## Results
 
-Model                   ROC-AUC             Recall(30-day readmission)              Precision
-Logistic Regression     ~0.63               ~0.45                                   ~0.17
-XGBoost                 ~0.64               ~0.54                                   ~0.17
+| Model | ROC-AUC | Recall (30-day readmission) | Precision |
+| ----- | ------- | --------------------------- | --------- |
+| Logistic Regression | ~0.63 | ~0.45 | ~0.17 |
+| XGBoost | ~0.64 | ~0.54 | ~0.17 |
 
 ### Threshold Tuning
 
-Threshold               Recall              Precision
-0.5                     0.54                0.17
-0.4                     0.85                0.13
+| Threshold | Recall | Precision |
+|----------|--------|----------|
+| 0.5 | 0.54 | 0.17 |
+| 0.4 | 0.85 | 0.13 |
 
 Conclusion: The lower thresholds led to improved recall, but it also increased false positives, which highlights the tradeoff of using this approach in clinical applications.
+
+### 📈 ROC Curve
+
+![ROC Curve](images/roc_curve.png)
+
+### 🔍 Feature Importance
+
+![Feature Importance](images/feature_importance.png)
 
 ## Key Insights
 
@@ -66,17 +76,17 @@ Conclusion: The lower thresholds led to improved recall, but it also increased f
 
 Overall, the readmission risk is driven by a combination of:
 
-  - Healthcare utilization
-  - Disease severity
-  - Patient characteristics
+- Healthcare utilization
+- Disease severity
+- Patient characteristics
 
 ## Clinical Relevance
 
 This model could be used to:
 
-  - Identify high-risk patients at discharge
-  - Trigger follow-up interventions
-  - Support hospital resource allocation
+- Identify high-risk patients at discharge
+- Trigger follow-up interventions
+- Support hospital resource allocation
 
 In practice, threshold selection can be adjusted depending on whether the priority is maximizing detection (recall) or minimizing false positives (precision).
 
