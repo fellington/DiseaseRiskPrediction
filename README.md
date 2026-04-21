@@ -43,7 +43,7 @@ In this project, I developed an end-to-end machine learning pipeline to predict 
   - 0 = readmitted over 30 days or never readmitted
 - Addressed missing values and encoded categorical variables
 
-#### 2. Modeling
+### 2. Modeling
 
 - **Baseline model: Logistic Regression**  
   - Reason: Provides a simple, interpretable baseline for binary classification and is commonly used in clinical settings. However, its performance is limited when relationships between variables are nonlinear, like in this dataset.
@@ -81,11 +81,13 @@ Conclusion: Lower thresholds improve recall but increase false positives, highli
 ### ROC Curve
 
 ![ROC Curve](images/roc_curve.png)
+
 *Figure 1: ROC curve showing model discrimination performance.*
 
 ### Feature Importance
 
 ![Feature Importance](images/feature_importance.png)
+
 *Figure 2: Top 10 features influencing readmission risk.*
 
 ## Key Insights
