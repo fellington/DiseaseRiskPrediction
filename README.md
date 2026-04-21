@@ -1,15 +1,27 @@
 # Predicting 30-day Hospital Readmissions
 
+## TL;DR
+
+Developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured EHR data.  
+Using a gradient boosting model (XGBoost) improved detection of high-risk patients (recall ~0.54, AUC ~0.64) compared to a logistic regression baseline.  
+Results highlight the importance of prior healthcare utilization and disease severity in predicting readmission risk.
+
 ## Overview
 
-In this project, I built an end-to-end machine learning pipeline to predict whether a patient will be readmitted within 30-days using structured electronic health record (EHR) data. Since hospital readmissions are costly and often preventable, identifying high-risk patients can support targeted interventions and improve patient outcomes.
+In this project, I developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured electronic health record (EHR) data. Since hospital readmissions are costly and often preventable, identifying high-risk patients can support targeted interventions and improve patient outcomes.
 
-## Objectives
+## Objectives (Quick Summary)
 
-- Predict the 30-day readmission risk
-- Handling class imbalance in clinical data
-- Evaluate the models performances using appropriate metrics (e.g. ROC-AUC, precision, recall)
-- Interpret the key drivers of readmission risk
+- Predict 30-day readmission risk
+- Handle class imbalance in clinical data
+- Evaluate model performance using appropriate metrics (ROC-AUC, precision, recall)
+- Interpret key drivers of readmission risk
+
+## Quick Project Links
+
+- [EDA & Preprocessing Notebook](notebooks/01_eda_and_preprocessing.ipynb)
+- [Modeling Notebook](notebooks/02_modeling.ipynb)
+- [SQL Script](sql/cohort_extraction.sql)
 
 ## Dataset
 
@@ -23,27 +35,34 @@ In this project, I built an end-to-end machine learning pipeline to predict whet
 
 ## Workflow
 
-1) Data Processing
-   - Cleaned the raw dataset (i.e. handled hidden formatting issues like \r)
-   - Created binary target:
-     - 1 = readmitted within 30 days
-     - 0 = readmitted over 30 days or never readmitted
-   - Addressed missing values and encoded categorical variables
-2) Modeling
-   - Baseline model: Logistic Regression
-     - Reason:
-   - Improved model: XGBoost
-     - Reason:
-   - Addressed the class imbalance using:
-     - Class weighting
-     - scale_pos_weight
-3) Evaluation
-   - Metrics used:
-     - ROC-AUC
-     - Precision/Recall
-   - Threshold tuning to balance sensitivity vs specificity
+### 1. Data Processing
+
+- Cleaned the raw dataset (i.e. handled hidden formatting issues like \r)
+- Created binary target:
+  - 1 = readmitted within 30 days
+  - 0 = readmitted over 30 days or never readmitted
+- Addressed missing values and encoded categorical variables
+
+#### 2. Modeling
+
+- **Baseline model: Logistic Regression**  
+  - Reason: Provides a simple, interpretable baseline for binary classification and is commonly used in clinical settings. However, its performance is limited when relationships between variables are nonlinear, like in this dataset.
+- **Improved model: XGBoost**  
+  - Reason: Selected for its strong performance on tabular data, capturing nonlinear relationships and feature interactions. It improves predictive performance over the baseline, particularly in identifying high-risk patients.
+- Addressed the class imbalance using:
+  - Class weighting
+  - scale_pos_weight
+
+### 3. Evaluation
+
+- Metrics used:
+  - ROC-AUC
+  - Precision/Recall
+- Threshold tuning to balance sensitivity vs specificity
 
 ## Results
+
+The XGBoost model achieved modest improvements over the baseline, particularly in recall, indicating better detection of high-risk patients.
 
 | Model | ROC-AUC | Recall (30-day readmission) | Precision |
 | ----- | ------- | --------------------------- | --------- |
@@ -53,24 +72,26 @@ In this project, I built an end-to-end machine learning pipeline to predict whet
 ### Threshold Tuning
 
 | Threshold | Recall | Precision |
-|----------|--------|----------|
+| --------- | ------ | --------- |
 | 0.5 | 0.54 | 0.17 |
 | 0.4 | 0.85 | 0.13 |
 
-Conclusion: The lower thresholds led to improved recall, but it also increased false positives, which highlights the tradeoff of using this approach in clinical applications.
+Conclusion: Lower thresholds improve recall but increase false positives, highlighting the tradeoff in clinical applications.
 
-### 📈 ROC Curve
+### ROC Curve
 
 ![ROC Curve](images/roc_curve.png)
+*Figure 1: ROC curve showing model discrimination performance.*
 
-### 🔍 Feature Importance
+### Feature Importance
 
 ![Feature Importance](images/feature_importance.png)
+*Figure 2: Top 10 features influencing readmission risk.*
 
 ## Key Insights
 
 - Prior inpatient visits are the strongest predictor of readmission risk
-- Emergency visits and length of stay indicate the patient's instability
+- Emergency visits and length of stay indicate patient instability and higher healthcare utilization
 - A1C levels and diabetes medications reflect the disease severity
 - Age shows a nonlinear effect on risk
 
@@ -88,7 +109,7 @@ This model could be used to:
 - Trigger follow-up interventions
 - Support hospital resource allocation
 
-In practice, threshold selection can be adjusted depending on whether the priority is maximizing detection (recall) or minimizing false positives (precision).
+In practice, threshold selection can be adjusted depending on whether the priority is **maximizing detection (recall)** or **minimizing false positives (precision)**.
 
 ## Limitations
 
@@ -129,4 +150,6 @@ project/
 
 ## About Me
 
-Hi, I'm a PhD-trained computer engineer with experience in performing end-to-end data science projects for remote healthcare systems, and I am transitioning into applied data science. I'm interested in roles at the intersection of healthcare and machine learning. Please feel free to connect with me on LinkedIn for questions or to just network. :D
+PhD-trained computer engineer with experience in healthcare systems and applied data science. This project reflects my transition into industry-focused machine learning, with a focus on healthcare applications.
+
+I am currently seeking data science roles at the intersection of healthcare and machine learning. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/floranne-ellington/).
