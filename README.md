@@ -1,6 +1,6 @@
 # Predicting 30-day Hospital Readmissions
 
-## TL;DR
+## TL;DR (Quick Summary)
 
 Developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured EHR data.  
 Using a gradient boosting model (XGBoost) improved detection of high-risk patients (recall ~0.54, AUC ~0.64) compared to a logistic regression baseline.  
@@ -10,7 +10,7 @@ Results highlight the importance of prior healthcare utilization and disease sev
 
 In this project, I developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured electronic health record (EHR) data. Since hospital readmissions are costly and often preventable, identifying high-risk patients can support targeted interventions and improve patient outcomes.
 
-## Objectives (Quick Summary)
+## Objectives
 
 - Predict 30-day readmission risk
 - Handle class imbalance in clinical data
