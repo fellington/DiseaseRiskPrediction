@@ -37,11 +37,13 @@ In this project, I developed an end-to-end machine learning pipeline to predict 
 
 ### 1. Data Processing
 
-- Cleaned the raw dataset (i.e. handled hidden formatting issues like \r)
-- Created binary target:
-  - 1 = readmitted within 30 days
-  - 0 = readmitted after 30 days or never readmitted
-- Addressed missing values and encoded categorical variables
+- Queried and validated the dataset from a MySQL backend through Jupyter
+- Cleaned the dataset, including removing hidden formatting issues in the `readmitted` field
+- Created a clean encounter-level view in SQL
+- Created a binary target:
+  - 1 = readmitted within 30 days  
+  - 0 = readmitted after 30 days or never readmitted  
+- Performed preprocessing and feature engineering in Python, including handling missing values and encoding categorical variables
 
 ### 2. Modeling
 
