@@ -31,6 +31,7 @@ In this project, I developed an end-to-end machine learning pipeline to predict 
 
 ## Quick Project Links
 
+- Live dashboard: [View Streamlit App](https://diseaseriskprediction.streamlit.app/)
 - [EDA & Preprocessing Notebook](https://github.com/fellington/DiseaseRiskPrediction/blob/main/notebooks/01_preprocessing.ipynb)
 - [Modeling Notebook](https://github.com/fellington/DiseaseRiskPrediction/blob/main/notebooks/02_modeling.ipynb)
 - [SQL Script](https://github.com/fellington/DiseaseRiskPrediction/blob/main/sql/cohort_extraction.sql)
