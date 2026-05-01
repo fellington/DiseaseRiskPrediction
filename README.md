@@ -2,9 +2,21 @@
 
 ## TL;DR (Quick Summary)
 
-Developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured EHR data.  
+Developed an end-to-end applied machine learning system for predicting 30-day hospital readmissions using structured EHR data.  
 Using a gradient boosting model (XGBoost) improved detection of high-risk patients (recall ~0.54, AUC ~0.64) compared to a logistic regression baseline.  
 Results highlight the importance of prior healthcare utilization and disease severity in predicting readmission risk.
+
+## Interactive Dashboard
+
+This project includes an interactive Streamlit dashboard that demonstrates how the model can be used in practice.
+
+It allows users to:
+
+- Explore model performance and threshold tradeoffs
+- Understand key drivers of readmission risk
+- Simulate patient-level predictions based on input features
+
+This provides a simple prototype of how model outputs and threshold decisions could be used in a clinical workflow.
 
 ## Overview
 
@@ -45,7 +57,7 @@ In this project, I developed an end-to-end machine learning pipeline to predict 
   - 0 = readmitted after 30 days or never readmitted  
 - Performed preprocessing and feature engineering in Python, including handling missing values and encoding categorical variables
 
-### 2. Modeling
+### 2. Model Development (Applied ML)
 
 - **Baseline model: Logistic Regression**  
   - Reason: Provides a simple, interpretable baseline for binary classification and is commonly used in clinical settings. However, its performance is limited when relationships between variables are nonlinear, like in this dataset.
@@ -78,7 +90,7 @@ The XGBoost model achieved modest improvements over the baseline, particularly i
 | 0.5 | 0.54 | 0.17 |
 | 0.4 | 0.85 | 0.13 |
 
-Conclusion: Lower thresholds improve recall but increase false positives, highlighting the tradeoff in clinical applications.
+Lower thresholds improve recall but increase false positives, highlighting the tradeoff in clinical applications.
 
 ### ROC Curve
 
@@ -125,7 +137,7 @@ In practice, threshold selection can be adjusted depending on whether the priori
 
 - Incorporate time-series/longitudinal modeling
 - Use unstructured clinical text (NLP)
-- Deploy as an interactive dashboard (e.g. Streamlit)
+- Extend the current dashboard with real-time data integration or more advanced modeling
 
 ## Tech Stack
 
@@ -141,6 +153,7 @@ In practice, threshold selection can be adjusted depending on whether the priori
 project/
 ├── data/
 │   └── diabetes_clean.csv
+├── app.py
 ├── notebooks/
 │   ├── 01_eda_and_preprocessing.ipynb
 │   └── 02_modeling.ipynb
@@ -149,11 +162,23 @@ project/
 ├── images/
 │   ├── roc_curve.png
 │   └── feature_importance.png
+├── requirements.txt
 ├── README.md
 ```
 
+## Run the Streamlit Dashboard Locally
+
+To launch the dashboard:
+
+1. Install dependencies:
+   `pip install -r requirements.txt`
+2. Run:
+   `streamlit run app.py`
+
+The app rebuilds the XGBoost model from the notebook configuration and uses the cleaned dataset in `data/`. 
+
 ## About Me
 
-PhD-trained computer engineer with experience in healthcare systems and applied data science. This project reflects my transition into industry-focused machine learning, with a focus on healthcare applications.
+PhD-trained computer engineer with experience in healthcare systems and applied data science. This project reflects my transition into industry-focused, applied machine learning, with a focus on healthcare applications.
 
 I am currently seeking data science roles at the intersection of healthcare and machine learning. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/floranne-ellington/).

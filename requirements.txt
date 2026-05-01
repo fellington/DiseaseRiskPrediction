@@ -1,0 +1,5 @@
+# For Streamlit dashboard
+streamlit>=1.35,<2.0
+pandas>=2.2,<3.0
+scikit-learn>=1.5,<2.0
+xgboost>=3.0,<4.0
