@@ -18,6 +18,37 @@ It allows users to:
 
 This provides a simple prototype of how model outputs and threshold decisions could be used in a clinical workflow.
 
+## Power BI Dashboard
+
+A Power BI dashboard was also developed to explore 30-day hospital readmission patterns and patient risk factors.
+
+The dashboard includes:
+
+- Summary KPIs for total encounters, 30-day readmissions, readmission rate, average length of stay, and average medications
+- Interactive filtering by gender, race, and admission type
+- Readmission analysis by age and prior inpatient utilization
+- Risk factor analysis by length of stay, diabetes medication use, and insulin status
+- Age and gender comparisons using a matrix visualization
+
+Power BI features used include:
+
+- Power Query for data preparation and cleaning
+- DAX measures for readmission metrics and summary statistics
+- Calculated columns for grouping healthcare utilization and length of stay
+- Interactive slicers and cross-filtering
+- KPI cards, column charts, and matrix visualizations
+
+### Power BI Report
+![Power BI Overview](images/powerbi_overview.png)
+
+*Figure 1: Power BI overview of 30-day hospital readmissions and prior inpatient utilization.*
+
+![Readmission Risk Factors](images/readmission_risk_factors.png)
+
+*Figure 2: Power BI analysis of readmission risk factors.*
+
+The Power BI report file (.pbix) is available in the powerbi/ directory.
+
 ## Overview
 
 In this project, I developed an end-to-end machine learning pipeline to predict 30-day hospital readmissions using structured electronic health record (EHR) data. Since hospital readmissions are costly and often preventable, identifying high-risk patients can support targeted interventions and improve patient outcomes.
@@ -97,13 +128,13 @@ Lower thresholds improve recall but increase false positives, highlighting the t
 
 ![ROC Curve](images/roc_curve.png)
 
-*Figure 1: ROC curve showing model discrimination performance.*
+*Figure 3: ROC curve showing model discrimination performance.*
 
 ### Feature Importance
 
 ![Feature Importance](images/feature_importance.png)
 
-*Figure 2: Top 10 features influencing readmission risk.*
+*Figure 4: Top 10 features influencing readmission risk.*
 
 ## Key Insights
 
