@@ -178,6 +178,8 @@ In practice, threshold selection can be adjusted depending on whether the priori
 - XGBoost
 - SQL (MySQL)
 - Matplotlib/Seaborn
+- Power BI (Power Query, DAX)
+- Streamlit
 
 ## Project Structure
 
@@ -191,11 +193,15 @@ project/
 │   └── 02_modeling.ipynb
 ├── sql/
 │   └── cohort_extraction.sql
+├── powerbi/
+│   └── DiabetesReadmissionDashboard.pbix
 ├── images/
 │   ├── roc_curve.png
-│   └── feature_importance.png
+│   ├── feature_importance.png
+│   ├── powerbi_overview.png
+│   └── readmission_risk_factors.png
 ├── requirements.txt
-├── README.md
+└── README.md
 ```
 
 ## Run the Streamlit Dashboard Locally
